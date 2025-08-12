@@ -1,0 +1,676 @@
+html {
+  scroll-ehavior: smooth;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.App {
+}
+
+body {
+  background-color: white;
+  line-height: 1.5em;
+}
+
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Top navigation */
+.topnav {
+  background-color: white;
+  overflow: hidden;
+  height: 60px;
+}
+.topnav .topnav-left {
+  float: left;
+  text-align: center;
+}
+.topnav-right {
+  float: right;
+}
+
+.projects {
+  width: 100%;
+  text-align: center;
+}
+.projects-container {
+  text-align: left;
+}
+
+@media (min-width: 660px) and (max-width: 974px) {
+  .projects-container {
+    margin: 0 auto;
+    width: 630px;
+  }
+}
+@media (max-width: 659px) {
+  .projects-container {
+    margin: 0 auto;
+    width: min-content !important;
+  }
+}
+
+.project-item {
+  border-radius: 7px;
+  display: inline-block !important;
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-bottom: 15px;
+  height: 150px;
+  width: 300px !important;
+  cursor: pointer;
+  vertical-align: top !important;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(152, 162, 179, 0.15),
+    0 2px 2px -1px rgba(152, 162, 179, 0.3);
+  transition: all 150ms cubic-bezier(0.694, 0.0482, 0.335, 1);
+  border: 1px solid #d3dae6;
+}
+
+.project-item:hover {
+  background: #eeeefc;
+}
+
+.scope-item {
+  border-radius:7px;
+  display: inline-block !important;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 100% !important;
+  cursor: pointer;
+  vertical-align: top !important;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(152, 162, 179, 0.15),
+    0 2px 2px -1px rgba(152, 162, 179, 0.3);
+  transition: all 150ms cubic-bezier(0.694, 0.0482, 0.335, 1);
+  border: 1px solid #d3dae6;
+  padding-bottom: 15px !important;
+}
+
+.scope-item:hover {
+  background: #fdfdff !important;
+}
+
+.scen-item {
+  border-radius:7px;
+  display: inline-block !important;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 100% !important;
+  cursor: pointer;
+  vertical-align: top !important;
+  padding: 20px;
+  padding-bottom: 25px;
+  box-shadow: 0 4px 8px 0 rgba(152, 162, 179, 0.15),
+    0 2px 2px -1px rgba(152, 162, 179, 0.3);
+  transition: all 150ms cubic-bezier(0.694, 0.0482, 0.335, 1);
+  border: 1px solid #d3dae6;
+}
+
+.scen-item:hover {
+  background: #f6fbff !important;
+}
+
+.scen-item-green {
+  background-color: #b2ffa7 !important;
+}
+.scen-item-red {
+  background-color: #ffd5d1 !important;
+}
+
+.scope-right-button {
+  position: relative;
+  float: right;
+}
+.text-button-small {
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
+}
+.text-button-small:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.scenario-item {
+  display: inline-block !important;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 100% !important;
+  cursor: pointer;
+  vertical-align: top !important;
+  padding: 20px;
+  padding-bottom: 25px;
+  box-shadow: 0 4px 8px 0 rgba(152, 162, 179, 0.15),
+    0 2px 2px -1px rgba(152, 162, 179, 0.3);
+  transition: all 150ms cubic-bezier(0.694, 0.0482, 0.335, 1);
+  border: 1px solid #d3dae6;
+}
+
+.scenario-item:hover {
+  background: #f6fbff;
+}
+
+.step-item {
+  border-radius:7px;
+  display: inline-block !important;
+  vertical-align: top;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 100% !important;
+  cursor: pointer;
+  vertical-align: top !important;
+  padding: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0 4px 8px 0 rgba(152, 162, 179, 0.15),
+    0 2px 2px -1px rgba(152, 162, 179, 0.3);
+  transition: all 150ms cubic-bezier(0.694, 0.0482, 0.335, 1);
+  border: 1px solid #d3dae6;
+}
+
+.step-item:hover {
+  background: #f6fbff;
+}
+
+.borderless-field-text {
+  box-shadow: none !important;
+  border-bottom: 1px solid lightgrey;
+}
+
+.borderless-text-area {
+  box-shadow: none !important;
+}
+
+.icon-button {
+  color: grey;
+  cursor: pointer;
+  margin-left: 15px;
+}
+.icon-button:hover {
+  color: blue;
+}
+
+#feature-title {
+  font-size: 32px;
+  margin: 30px;
+}
+
+.feature-header {
+  background-image: url('./assets/qa_engineer.png');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 450px;
+  text-align: right;
+}
+
+.feature-text-container {
+  width: 50%;
+  float: right;
+  height: 100%;
+  padding: 30px;
+}
+
+.feature-text {
+  font-family: Arial;
+  font-size: 24px;
+  text-align: left;
+  color: #000000;
+  font-weight: 900;
+  margin: 0;
+  position: relative;
+  top: 40%;
+  line-height: 1.2em;
+  margin-bottom: 15px;
+}
+
+.feature-desc {
+  font-family: Arial;
+  font-size: 14;
+  text-align: left;
+  color: #5d5fef;
+  margin: 0;
+  position: relative;
+  top: 40%;
+  line-height: 1.5em;
+}
+
+/* Content  */
+.content-wide {
+  width: 100% !important;
+  margin: 0 auto !important;
+  display: block !important;
+}
+.content {
+  max-width: 1000px;
+  margin: 0 auto !important;
+  display: block !important;
+}
+.page-title {
+  font-family: Arial;
+  color: #5d5fef;
+  text-align: center;
+  padding: 15px;
+  padding-top: 30px;
+  font-size: 24px;
+  font-weight: 800;
+}
+.footer-container {
+  background: #5d5fef;
+  text-align: center;
+  color: white;
+}
+.footer {
+  font-family: Arial;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+#feature-sub-title {
+  font-size: 24px;
+  margin: 15px;
+}
+
+/* Pricing */
+.pricing-bg {
+  background: rgb(24, 51, 105);
+  background: #eeeefc;
+  color: white;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.pricing {
+  font-family: Arial;
+  color: black;
+  height: 900px;
+  padding: 30px;
+}
+.pricing-title {
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #173268;
+  font-weight: 900;
+  font-size: 24px;
+}
+.pricing-item {
+  width: 24.5%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 auto;
+}
+.pricing-item-container {
+  height: 315px;
+}
+.pricing-item-title {
+  width: 100%;
+  text-align: center;
+  font-size: 24;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  color: black;
+}
+.pricing-item-price {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #173268;
+  height: 30px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.rc-time-picker-input {
+  background: red;
+  color: red;
+}
+
+.scrollable {
+  overflow-y: auto;
+}
+
+.live-preview {
+  position: absolute !important;
+  min-width: 600px !important;
+  max-width: 600px !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+  clip-path: inset(0px -15px 0px 0px);
+}
+
+.full-preview {
+  padding-left: 600px !important;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
+}
+
+.heart-bounce {
+  animation: bounce 0.8s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.heart-loading > button {
+  display: none;
+}
+
+.icon-only-btn {
+  min-width: 40px !important;
+}
+
+.always-show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+/* Handle responsive  issue */
+@media (min-width: 1024px) {
+  .hide-in-desktop {
+    display: none;
+  }
+  .show-in-desktop {
+    display: block !important;
+  }
+}
+@media (min-width: 795px) {
+}
+@media (max-width: 794px) {
+  .topnav-right {
+    width: 100%;
+  }
+  .topnav-float-right {
+    float: right;
+  }
+  .hide-in-mobile {
+    display: none !important;
+  }
+  /**/
+  .feature-header {
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+    text-align: right;
+  }
+  .feature-text-container {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+  }
+  .feature-text {
+    font-family: Arial;
+    font-size: 24px;
+    text-align: center;
+    color: #5d5fef;
+    font-weight: 900;
+    margin: 0;
+    position: relative;
+    top: 0%;
+    line-height: 1.2em;
+    margin-bottom: 15px;
+  }
+  .feature-desc {
+    font-family: Arial;
+    font-size: 14;
+    text-align: center;
+    color: #5d5fef;
+    margin: 0;
+    position: relative;
+    top: 0%;
+    line-height: 1.5em;
+  }
+  /**/
+
+  .pricing {
+    height: auto;
+  }
+  .pricing-item {
+    display: block;
+    max-width: 480px;
+    min-width: 300px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #173268;
+  }
+
+  .pricing-item-container {
+    margin-bottom: 15px;
+    height: auto;
+  }
+
+  .pricing-item-title {
+    width: 100%;
+    text-align: center;
+    font-size: 24;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    color: black;
+  }
+
+  .pricing-item-price {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 749px) {
+}
+
+@media (min-width: 450px) and (max-width: 649px) {
+}
+
+@media (min-width: 200px) and (max-width: 449px) {
+}
+
+/* Burger menu*/
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* generated by https://loading.io/ */
+@keyframes ldio-6a8hy7czdd6 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.ldio-6a8hy7czdd6 div {
+  left: 47.47px;
+  top: 19.695px;
+  position: absolute;
+  animation: ldio-6a8hy7czdd6 linear 0.5681818181818182s infinite;
+  background: #5d5fef;
+  width: 6.0600000000000005px;
+  height: 13.13px;
+  border-radius: 3.0300000000000002px / 5.5146px;
+  transform-origin: 3.0300000000000002px 30.805px;
+}
+.ldio-6a8hy7czdd6 div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -0.5165289256198348s;
+  background: #5d5fef;
+}
+.ldio-6a8hy7czdd6 div:nth-child(2) {
+  transform: rotate(32.72727272727273deg);
+  animation-delay: -0.46487603305785125s;
+  background: #5d5fef;
+}
+.ldio-6a8hy7czdd6 div:nth-child(3) {
+  transform: rotate(65.45454545454545deg);
+  animation-delay: -0.4132231404958678s;
+  background: #5d5fef;
+}
+.ldio-6a8hy7czdd6 div:nth-child(4) {
+  transform: rotate(98.18181818181819deg);
+  animation-delay: -0.3615702479338843s;
+  background: #5d5fef;
+}
+.ldio-6a8hy7czdd6 div:nth-child(5) {
+  transform: rotate(130.9090909090909deg);
+  animation-delay: -0.30991735537190085s;
+  background: #5d5fef;
+}
+.ldio-6a8hy7czdd6 div:nth-child(6) {
+  transform: rotate(163.63636363636363deg);
+  animation-delay: -0.2582644628099174s;
+  background: #5d5fef;
+}
+.ldio-6a8hy7czdd6 div:nth-child(7) {
+  transform: rotate(196.36363636363637deg);
+  animation-delay: -0.2066115702479339s;
+  background: #5d5fef;
+}
+.ldio-6a8hy7czdd6 div:nth-child(8) {
+  transform: rotate(229.0909090909091deg);
+  animation-delay: -0.15495867768595042s;
+  background: #5d5fef;
+}
+.ldio-6a8hy7czdd6 div:nth-child(9) {
+  transform: rotate(261.8181818181818deg);
+  animation-delay: -0.10330578512396695s;
+  background: #5d5fef;
+}
+.ldio-6a8hy7czdd6 div:nth-child(10) {
+  transform: rotate(294.54545454545456deg);
+  animation-delay: -0.05165289256198347s;
+  background: #5d5fef;
+}
+.ldio-6a8hy7czdd6 div:nth-child(11) {
+  transform: rotate(327.27272727272725deg);
+  animation-delay: 0s;
+  background: #5d5fef;
+}
+.loadingio-spinner-spinner-ogtoj99obmc {
+  width: 101px;
+  height: 101px;
+  display: inline-block;
+  overflow: hidden;
+  background: none;
+}
+.ldio-6a8hy7czdd6 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-6a8hy7czdd6 div {
+  box-sizing: content-box;
+}
+/* generated by https://loading.io/ */
+
+/* elastic ui override*/
+.euiModal {
+  border-radius:7px;
+}
+.euiModal__flex {
+  height: 100%;
+}
+
+.euiFlexGroup {
+  margin: 0px !important;
+}
+
+.euiButton {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.euiButton--primary.euiButton--fill {
+  background-color: #5d5fef !important;
+  border: 1px solid #5d5fef !important;
+}
+
+.euiModal {
+}
