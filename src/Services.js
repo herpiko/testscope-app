@@ -20,30 +20,41 @@ export default {
     });
   },
   authenticate: () => {
-    return new Promise((resolve, reject) => {
-      var token = '';
-      Firebase.auth
-        .signInWithPopup(Firebase.provider)
-        .then((result) => {
-          let idToken = Firebase.auth.currentUser.getIdToken(true);
-          console.log(idToken);
-          return idToken;
-        })
-        .then((result) => {
-          token = result;
-          return axios.get(Config.backendUrl + '/api/user', {
-            headers: {
-              Authorization: token,
-            },
+    return new Promise(async (resolve, reject) => {
+      try {
+        // Wait for Firebase to be initialized
+        const firebase = await Firebase.init();
+        if (!firebase) {
+          reject(new Error('Firebase failed to initialize'));
+          return;
+        }
+        
+        var token = '';
+        firebase.auth
+          .signInWithPopup(firebase.provider)
+          .then((result) => {
+            let idToken = firebase.auth.currentUser.getIdToken(true);
+            console.log(idToken);
+            return idToken;
+          })
+          .then((result) => {
+            token = result;
+            return axios.get(Config.backendUrl + '/api/user', {
+              headers: {
+                Authorization: token,
+              },
+            });
+          })
+          .then((result) => {
+            result.data.token = token;
+            resolve(result);
+          })
+          .catch((err) => {
+            reject(err);
           });
-        })
-        .then((result) => {
-          result.data.token = token;
-          resolve(result);
-        })
-        .catch((err) => {
-          reject(err);
-        });
+      } catch (error) {
+        reject(error);
+      }
     });
   },
   getInvitation: (code) => {

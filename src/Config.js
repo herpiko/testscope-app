@@ -1,6 +1,6 @@
 export default {
-  projectName: 'testscope.io',
+  projectName: 'testscope.id',
   projectDomain: 'testscope',
-  projectDomainTld: 'io',
-  backendUrl: process.env.REACT_APP_BACKEND || '',
+  projectDomainTld: 'id',
+  backendUrl: process.env.REACT_APP_BACKEND_URL
 };

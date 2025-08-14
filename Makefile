@@ -1,12 +1,14 @@
 build-prod:
-	NODE_OPTIONS=--openssl-legacy-provider npm run build
+	NODE_OPTIONS=--openssl-legacy-provider yarn build
+
+build-docker:
+	docker build --platform linux/amd64 -t herpiko/testscope-app:latest .
 
 run:
-	NODE_OPTIONS=--openssl-legacy-provider npm run start
+	NODE_OPTIONS=--openssl-legacy-provider yarn start
 
-deploy:
-	docker build --platform linux/amd64 -t testscopeio-app:latest .
-	docker save testscopeio-app:latest > testscopeio-app-latest.img
+deploy: build-docker
+	docker save testscope-app:latest > testscope-app-latest.img
 	scp testscopeio-app-latest.img user@foobar:~/app.img
 	ssh user@foobar 'docker load < app.img'
 	ssh user@foobar 'docker-compose up -d --force-recreate app'
